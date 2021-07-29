@@ -11,5 +11,4 @@ public class AddressBookAppApplication {
         SpringApplication.run(AddressBookAppApplication.class, args);
         System.out.println("********...Welcome to Address Book App...********");
     }
-
 }
