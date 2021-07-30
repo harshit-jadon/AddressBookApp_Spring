@@ -2,6 +2,7 @@ package com.spring.addressbookapp.service;
 
 import com.spring.addressbookapp.dto.AddressBookDTO;
 import com.spring.addressbookapp.model.AddressBookData;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,8 +33,8 @@ public class AddressBookService implements IAddressBookService {
     @Override
     public AddressBookData updateAddressBook(int id, AddressBookDTO addressBookDTO) {
         AddressBookData addressBookData = this.getAddressBookById(id);
-        addressBookData.setName(addressBookDTO.getName());
-        addressBookData.setAddress(addressBookDTO.getAddress());
+        addressBookData.setName(addressBookDTO.name);
+        addressBookData.setAddress(addressBookDTO.address);
         addressBookDataList.set(id-1,addressBookData);
         return addressBookData;
     }
