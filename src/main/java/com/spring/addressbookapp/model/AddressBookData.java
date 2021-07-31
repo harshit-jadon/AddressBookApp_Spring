@@ -30,16 +30,21 @@ public @Data class AddressBookData {
     @Column(name="department")
     public List<String> departments;
 
-    public AddressBookData(AddressBookDTO addressBookDTO) {
-        this.name = addressBookDTO.name;
-        this.address = addressBookDTO.address;
-        this.salary = addressBookDTO.salary;
-        this.gender = addressBookDTO.gender;
-        this.startDate = addressBookDTO.startDate;
-        this.note = addressBookDTO.note;
-        this.profilePic = addressBookDTO.profilePic;
-        this.departments = addressBookDTO.departments;
-    }
-
     public AddressBookData() {}
+
+    public AddressBookData(AddressBookDTO addressBookDTO) {
+        this.updateAddressBookData(addressBookDTO);
+
+    }
+  public void updateAddressBookData(AddressBookDTO addressBookDTO){
+      this.name = addressBookDTO.name;
+      this.address = addressBookDTO.address;
+      this.salary = addressBookDTO.salary;
+      this.gender = addressBookDTO.gender;
+      this.startDate = addressBookDTO.startDate;
+      this.note = addressBookDTO.note;
+      this.profilePic = addressBookDTO.profilePic;
+      this.departments = addressBookDTO.departments;
+  }
+
 }
