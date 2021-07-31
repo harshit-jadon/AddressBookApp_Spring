@@ -1,6 +1,7 @@
 package com.spring.addressbookapp.service;
 
 import com.spring.addressbookapp.dto.AddressBookDTO;
+import com.spring.addressbookapp.exceptions.AddressBookException;
 import com.spring.addressbookapp.model.AddressBookData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,10 @@ public class AddressBookService implements IAddressBookService {
 
     @Override
     public AddressBookData getAddressBookById(int id) {
-        return addressBookDataList.get(id-1);
+        return addressBookDataList.stream()
+                .filter(employeePayrollData -> employeePayrollData.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new AddressBookException("Employee Not Found"));
     }
 
     @Override
