@@ -10,6 +10,8 @@ public interface IAddressBookService {
 
     AddressBookData getAddressBookById(int id);
 
+    List<AddressBookData> getAddressBookByDepartments(String department);
+
     AddressBookData createAddressBook(AddressBookDTO addressBookDTO);
 
     AddressBookData updateAddressBook(int id, AddressBookDTO addressBookDTO);

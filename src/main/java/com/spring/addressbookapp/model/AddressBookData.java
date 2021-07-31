@@ -13,11 +13,12 @@ public @Data class AddressBookData {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="id")
+    @Column(name="ab_id")
     private int id;
 
     @Column(name="name")
     private String name;
+
     private String address;
     public long salary;
     public String gender;

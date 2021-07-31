@@ -33,6 +33,11 @@ public class AddressBookService implements IAddressBookService {
     }
 
     @Override
+    public List<AddressBookData> getAddressBookByDepartments(String department) {
+        return addressBookRepository.findAddressBookDataByDepartments(department);
+    }
+
+    @Override
     public AddressBookData createAddressBook(AddressBookDTO addressBookDTO) {
         AddressBookData addressBookData = new AddressBookData(addressBookDTO);
         log.debug("Address Book Data: "+ addressBookData.toString());
