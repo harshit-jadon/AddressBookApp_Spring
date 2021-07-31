@@ -1,42 +1,31 @@
 package com.spring.addressbookapp.model;
 
 import com.spring.addressbookapp.dto.AddressBookDTO;
+import lombok.Data;
 
-public class AddressBookData {
+import java.time.LocalDate;
+import java.util.List;
+
+public @Data class AddressBookData {
     private int id;
     private String name;
     private String address;
-
-
-    public AddressBookData() { }
+    public long salary;
+    public String gender;
+    public LocalDate startDate;
+    public String note;
+    public String profilePic;
+    public List<String> departments;
 
     public AddressBookData(int id, AddressBookDTO addressBookDTO) {
         this.id = id;
-        this.name = addressBookDTO.getName();
-        this.address = addressBookDTO.getAddress();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+        this.name = addressBookDTO.name;
+        this.address = addressBookDTO.address;
+        this.salary = addressBookDTO.salary;
+        this.gender = addressBookDTO.gender;
+        this.startDate = addressBookDTO.startDate;
+        this.note = addressBookDTO.note;
+        this.profilePic = addressBookDTO.profilePic;
+        this.departments = addressBookDTO.departments;
     }
 }

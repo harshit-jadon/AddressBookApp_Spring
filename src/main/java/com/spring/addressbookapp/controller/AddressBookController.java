@@ -4,6 +4,7 @@ import com.spring.addressbookapp.dto.AddressBookDTO;
 import com.spring.addressbookapp.dto.ResponseDTO;
 import com.spring.addressbookapp.model.AddressBookData;
 import com.spring.addressbookapp.service.IAddressBookService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/addressbookcontroller")
+@Slf4j
 public class AddressBookController {
 
     @Autowired

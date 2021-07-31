@@ -15,5 +15,6 @@ public class AddressBookAppApplication {
        log.info("...Welcome to Address Book App in {} environment...",context.getEnvironment().getProperty("environment"));
        log.info(" Address Book App Database is {} ",context.getEnvironment().getProperty("spring.datasource.username"));
 
+
     }
 }
